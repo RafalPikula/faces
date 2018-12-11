@@ -14,15 +14,15 @@ The upshot is that gender classification achieves good results nearing in best c
 The preprocessing and preparatory steps are well commented in the first two notebooks and will not be expanded upon. Instead, we will concentrate on outlining the models used and summarizing the results.
 
 #### Gender Classification Models
-**Model 1** is a very simple sequential model with only 3 convolutional layers coupled with some max pooling and batch normalization layers (no data augmentation used) while the classifying top of the model uses dropout (0.5). The accuracy achieved is **85.186%**.
+**Model G1** is a very simple sequential model with only 3 convolutional layers coupled with some max pooling and batch normalization layers (no data augmentation used) while the classifying top of the model uses dropout (0.5). The accuracy achieved is **85.186%**.
 
-**Model 2** is a nonsequential model consisting of four blocks where each block has two concatenated branches of two convolutional layers intertwined with batch normalization layers and after each concatenation there is a max pooling and batch normalization layer (no data augmentation used) while the classifying top of the model uses dropout (0.5) and l2 regularization. The accuracy achieved is **85.474%**.
+**Model G2** is a nonsequential model consisting of four blocks where each block has two concatenated branches of two convolutional layers intertwined with batch normalization layers and after each concatenation there is a max pooling and batch normalization layer (no data augmentation used) while the classifying top of the model uses dropout (0.5) and l2 regularization. The accuracy achieved is **85.474%**.
 
-**Model 3** is a more complex version of Model 1 with 6 instead of 3 convolutional layers, the classifying top of the model uses dropout (0.5) and this time data augmentation was used to train the model. The accuracy achieved is **87.587%**.
+**Model G3** is a more complex version of Model G1 with 6 instead of 3 convolutional layers, the classifying top of the model uses dropout (0.5) and this time data augmentation was used to train the model. The accuracy achieved is **87.587%**.
 
-**Model 4** is basically the VGG19 model without the top and with the weights trained on Imagenet, the custom classifying top uses dropout (0.25). The model was trained with data augmentation as follows: first the classifying top was trained on the first part of the data with the VGG19 layers frozen, then the high-level convolutional layers were unfrozen, and the model was trained on all parts of the data. The accuracy achieved is **88.938%**.
+**Model G4** is basically the VGG19 model without the top and with the weights trained on Imagenet, the custom classifying top uses dropout (0.25). The model was trained with data augmentation as follows: first the classifying top was trained on the first part of the data with the VGG19 layers frozen, then the high-level convolutional layers were unfrozen, and the model was trained on all parts of the data. The accuracy achieved is **88.938%**.
 
 #### Age Prediction Models
-**Model 1** is a more complex version of Model 3 above where each convolutional layer is replaced with a block of 2 such layers intertwined with batch normalization layers while the top of the model uses dropout (0.5). The model was trained with data augmentation. The results: the mean squared error is 95.946, the mean absolute error is **7.408**.
+**Model A1** is a more complex version of Model G3 above where each convolutional layer is replaced with a block of 2 such layers intertwined with batch normalization layers while the top of the model uses dropout (0.5). The model was trained with data augmentation. The results: the mean squared error is 95.946, the mean absolute error is **7.408**.
 
-**Model 2** is again the VGG19 model without the top and with the weights trained on Imagenet, but with a different custom top without dropout. The model was trained with data augmentation. The results: the mean squared error is 95.629, the mean absolute error is **7.382**.
+**Model A2** is again the VGG19 model without the top and with the weights trained on Imagenet, but with a different custom top without dropout. The model was trained with data augmentation. The results: the mean squared error is 95.629, the mean absolute error is **7.382**.
