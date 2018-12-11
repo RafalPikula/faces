@@ -1,5 +1,6 @@
 # Face as Gender and Age Determinant  
-The main goal of this project is to learn and test how well different convolutional neural network architectures can deal with the problem of gender detection and/or age prediction when fed solely the photographs of faces. In the entire project we use keras with tensorflow backend.
+The main goal of this project is to learn and test how well different convolutional neural network architectures can deal with <br> 
+the problem of gender detection and/or age prediction when fed solely the photographs of faces. In the entire project we use keras with tensorflow backend.
 
 Note that the data used for this project can be downloaded from this site: https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/
 by clicking "Download faces only (7GB)" and "Download images meta data".
