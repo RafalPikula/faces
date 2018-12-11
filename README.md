@@ -19,10 +19,10 @@ The preprocessing and preparatory steps are well commented in the first two note
 
 **Model 3** is a more complex version of Model 1 with 6 instead of 3 convolutional layers, the classifying top of the model uses dropout (0.5) and this time data augmentation was used to train the model. The accuracy achieved is **87.587%**.
 
-**Model 4** is basically the VGG19 model without the top and with the weights trained on Imagenet, the custom classifying top uses dropout (0.25). The model was trained with data augmentation as follows: first the classifying top was trained on the first part of the data with the VGG19 layers frozen, then the high-level convolutional layers were unfrozen and the model was trained on all parts of the data. The accuracy achieved is **88.938%**.
+**Model 4** is basically the VGG19 model without the top and with the weights trained on Imagenet, the custom classifying top uses dropout (0.25). The model was trained with data augmentation as follows: first the classifying top was trained on the first part of the data with the VGG19 layers frozen, then the high-level convolutional layers were unfrozen, and the model was trained on all parts of the data. The accuracy achieved is **88.938%**.
 
 #### Age Prediction Models
-**Model 1** is a more complex version of Model 3 above where each convolutional layer is repalced with a block of 2 such layers intertwined with batch normalization layers while the top of the model uses dropout (0.5). The model was trained with data augmentation. The results: mean squared error is 95.946, mean absolute error is **7.408**.
+**Model 1** is a more complex version of Model 3 above where each convolutional layer is replaced with a block of 2 such layers intertwined with batch normalization layers while the top of the model uses dropout (0.5). The model was trained with data augmentation. The results: mean squared error is 95.946, mean absolute error is **7.408**.
 
 **Model 2** is again the VGG19 model without the top and with the weights trained on Imagenet, but with a different custom top without dropout. The model was trained with data augmentation. The results: mean squared error is 95.629, mean absolute error is **7.382**.
 
