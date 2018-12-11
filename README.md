@@ -12,5 +12,5 @@ The upshot is that gender classification achieves good results nearing in best c
 ### More Detailed Description
 The preprocessing and preparatory steps are well commented in the first two notebooks and will not be expanded upon. Instead, we will concentrate on outlining the models used and summarizing the results.
 
-######Gender Classification
+###### Gender Classification
 Model 1
