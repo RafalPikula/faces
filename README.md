@@ -33,4 +33,15 @@ If, on the other hand, we restrict our attention to the well represented \[26, 4
 
 For completeness, we include the plots of predictions vs. actual age values and their joint density for both the full age range of the train set (the \[11, 70\] age bracket) and the \[26, 45\] age bracket.
 
-![Predicted Age vs. Actual Age](https://github.com/RafalPikula/faces/blob/master/pictures/Predicted_Age_vs_Actual_Age_for_Full_Age_Range.png)
+We start with the full age range:
+
+![Predicted Age vs. Actual Age for Full Age Range](https://github.com/RafalPikula/faces/blob/master/pictures/Predicted_Age_vs_Actual_Age_for_Full_Age_Range.png)
+
+![Joint Density of Predicted and Actual Age with Error Bands for Full Age Range](https://github.com/RafalPikula/faces/blob/master/pictures/Joint_Density_of_Predicted_and_Actual_Age_with_Error_Bands_for_Full_Age_Range.png)
+
+Then, we restrict our attention to the \[26, 45\] age bracket:
+
+![Predicted Age vs. Actual Age for Age Bracket](https://github.com/RafalPikula/faces/blob/master/pictures/Predicted_Age_vs_Actual_Age_for_Age_Bracket.png)
+
+![Joint Density of Predicted and Actual Age with Error Bands for Age Bracket](https://github.com/RafalPikula/faces/blob/master/pictures/Joint_Density_of_Predicted_and_Actual_Age_with_Error_Bands_for_Age_Bracket.png)
+
