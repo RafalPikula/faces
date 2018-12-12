@@ -28,7 +28,6 @@ The preprocessing and preparatory steps are well commented in the first two note
 
 ### High Mean Absolute Error Illusion
 The error of 7.382 years is quite big, and it may seem that the model didn't do a good job. However, in the last notebook we compute and visualize the mean absolute error per age and the number of photographs in the train set per age. It turns out that as the number of photos decreases the error increases and that these two variables are very strongly negatively correlated (-0.8825). In other words, the model doesn't learn well for those age values that are highly underrepresented in the train set.
-
 If, on the other hand, we restrict our attention to the well represented \[26, 45\] age bracket, the results are much better - the mean absolute error drops to **4.921**. It can be concluded that the unbalanced nature of the age distribution in the train set degrades the model performance. Therefore, it is conceivable that artificially balancing the age distribution (and effectively making it uniform) would have a positive impact on the model performance.
 
 For completeness, we include the plots of predictions vs. actual age values and their joint density for both the full age range of the train set (the \[11, 70\] age bracket) and the \[26, 45\] age bracket.
