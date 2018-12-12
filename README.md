@@ -33,4 +33,4 @@ If, on the other hand, we restrict our attention to the well represented \[26, 4
 
 For completeness, we include the plots of predictions vs. actual age values and their joint density for both the full age range of the train set (the \[11, 70\] age bracket) and the \[26, 45\] age bracket.
 
-!(https://github.com/RafalPikula/faces/blob/master/pictures/Joint_Density_of_Predicted_and_Actual_Age_with_Error_Bands_for_Full_Age_Range.png)
+!(https://github.com/RafalPikula/faces/blob/master/pictures/Predicted_Age_vs_Actual_Age_for_Full_Age_Range.png)
