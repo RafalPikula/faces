@@ -5,9 +5,9 @@ Note that the data used for this project can be downloaded from this site: https
 by clicking "Download faces only (7GB)" and "Download images meta data".
 
 ## Short Description
-The Jupyter notebooks are numbered for easier navigation. The photo data requires some preprocessing and cleaning which is done in the first notebook while the second notebook contains the steps needed to prepare the train-validation-test split. Apart from these, there are four notebooks with different gender classification models and two notebooks with age prediction models. Finally, the last notebook provides an explanation of some seemingly substandard results. Note that due to its size the data was divided into 20 parts, and the model training was carried out consecutively on each part at a time.
+The Jupyter notebooks are numbered for easier navigation. The photo data requires some preprocessing and cleaning which is done in the first notebook while the second notebook contains the steps needed to prepare the train-validation-test split. Apart from these, there are four notebooks with different gender classification models and two notebooks with age prediction models. Finally, the last notebook provides an explanation of some seemingly substandard results. Note that due to its size the data was divided into 20 parts (unless stated otherwise), and the model training was carried out consecutively on each part at a time.
 
-The upshot is that gender classification achieves good results nearing in best case 89% accuracy while age prediction is a much more demanding task - the mean absolute error of the best model (out of the tested models) in this category is merely 7.38 years, however, in the last notebook we show that under certain circumstances it is quite possible to drive this value down, even below 5 years.
+The upshot is that gender classification achieves good results nearing in best case 89% accuracy while age prediction is a much more demanding task - the mean absolute error of the best model (out of the tested models) in this category is merely 7.38 years, however, in the last notebook we theorize that under certain circumstances it might be possible to drive this value down, even below 5 years.
 
 ## More Detailed Description
 The preprocessing and preparatory steps are well commented in the first two notebooks and will not be expanded upon. Instead, we will concentrate on outlining the models used and summarizing the results. We will also throw some light on the causes of the high age prediction error.
@@ -21,10 +21,14 @@ The preprocessing and preparatory steps are well commented in the first two note
 
 **Model G4** is basically the VGG19 model without the top and with the weights trained on Imagenet, the custom classifying top uses dropout (0.25). The model was trained with data augmentation as follows: first the classifying top was trained on the first part of the data with the VGG19 layers frozen, then the high-level convolutional layers were unfrozen, and the model was trained on all parts of the data. The accuracy achieved is **88.938%**.
 
+**Model G5** is a simpler version of Model G3 with a different and more efficient training approach employed leading to an improvement upon its 'bigger relative' - the accuracy of Model G5 is **88.532%**. In this particular case the data was divided into 100 parts.
+
 ### Age Prediction Models
 **Model A1** is a more complex version of Model G3 above where each convolutional layer is replaced with a block of 2 such layers intertwined with batch normalization layers while the top of the model uses dropout (0.5). The model was trained with data augmentation. The results: the mean squared error is 95.946, the mean absolute error is **7.408**.
 
 **Model A2** is again the VGG19 model without the top and with the weights trained on Imagenet, but with a different custom top without dropout. The model was trained with data augmentation. The results: the mean squared error is 95.629, the mean absolute error is **7.382**.
+
+**Model A3** is a simpler version of Model A1 trained using a different training approach. the results: the mean squared error is 99.406, the mean absolute error is **7.423**. In this particular case the data was divided into 100 parts.
 
 ### High Mean Absolute Error Illusion
 The error of 7.382 years is quite big, and it may seem that the model didn't do a good job. However, in the last notebook we compute and visualize the mean absolute error per age and the number of photographs in the train set per age. It turns out that as the number of photos decreases the error increases and that these two variables are very strongly negatively correlated (-0.8825). In other words, the model doesn't learn well for those age values that are highly underrepresented in the train set.
