@@ -28,7 +28,7 @@ The preprocessing and preparatory steps are well commented in the first two note
 
 **Model A2** is again the VGG19 model without the top and with the weights trained on Imagenet, but with a different custom top without dropout. The model was trained with data augmentation. The results: the mean squared error is 95.629, the mean absolute error is **7.382**.
 
-**Model A3** is a simpler version of Model A1 trained using a different training approach. the results: the mean squared error is 99.406, the mean absolute error is **7.423**. In this particular case the data was divided into 100 parts.
+**Model A3** is a simpler version of Model A1 trained using a different training approach. The results: the mean squared error is 99.406, the mean absolute error is **7.423**. In this particular case the data was divided into 100 parts.
 
 ### High Mean Absolute Error Illusion
 The error of 7.382 years is quite big, and it may seem that the model didn't do a good job. However, in the last notebook we compute and visualize the mean absolute error per age and the number of photographs in the train set per age. It turns out that as the number of photos decreases the error increases and that these two variables are very strongly negatively correlated (-0.8825). In other words, the model doesn't learn well for those age values that are highly underrepresented in the train set.
