@@ -17,7 +17,7 @@ The preprocessing and preparatory steps are well commented in the first two note
 
 **Model G2** is the ResNet50 model available in Keras while the classifying top of the model uses dropout (0.5). This model is first trained for several epochs with ResNet50 layers set to be non-trainable and subsequently fine-tuned by setting a certain numbers of previously non-trainable layers to be trainable. The accuracy achieved is **88.256%**.
 
-**Model G3** is the Xception model available in Keras while the classifying top of the model uses dropout (0.5). This model is first trained for several epochs with ResNet50 layers set to be non-trainable and subsequently fine-tuned by setting a certain numbers of previously non-trainable layers to be trainable. The accuracy achieved is **88.794%**.
+**Model G3** is the Xception model available in Keras while the classifying top of the model uses dropout (0.5). This model is first trained for several epochs with Xception layers set to be non-trainable and subsequently fine-tuned by setting a certain numbers of previously non-trainable layers to be trainable. The accuracy achieved is **88.794%**.
 
 **Model G4** is a more complicated version of the Model G1 encompasing 6 convolutional blocks of layers each containing 2 convolutional layers intertwined with max pooling, batch normalization and spatial dropout layers while the classifying top of the model uses dropout (0.5). The accuracy achieved is **89.476%**.
 
